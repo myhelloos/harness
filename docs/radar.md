@@ -1,52 +1,52 @@
-# AI Agent Harness Radar
+# AI Agent Harness 雷达
 
-Checked: 2026-07-05 Asia/Shanghai
+检查日期：2026-07-05 Asia/Shanghai
 
-This radar is intentionally conservative. It lists tools and ideas worth testing, not endorsements.
+这份雷达刻意保持保守。它列出值得测试的工具和想法，而不是背书。
 
-## Near-Term Candidates
+## 近期候选
 
-| Area | Candidate | Why It Matters | First Probe |
+| 领域 | 候选项 | 重要性 | 第一个探针 |
 | --- | --- | --- | --- |
-| Managed agent runtime | OpenAI Agents SDK | Lightweight primitives for agents, handoffs, guardrails, sessions, tracing, MCP, and sandbox agents. | Build a file-producing agent with tracing and a simple guardrail. |
-| Stateful orchestration | LangGraph | Low-level orchestration runtime for long-running, stateful agents with durable execution, streaming, human-in-the-loop, and persistence. | Build a two-node graph with checkpointing and interruption. |
-| Multi-agent systems | AutoGen | AgentChat for conversational agents and Core for event-driven multi-agent systems. | Build a two-agent reviewer/implementer loop with bounded turns. |
-| Evaluation framework | Inspect AI | Evaluation tasks with datasets, solvers, scorers, agent tools, sandboxing, logs, and external-agent bridges. | Create a tiny code-editing eval with deterministic scoring. |
-| Coding benchmark contract | SWE-bench | Real-world issue-resolution benchmark shape; useful for understanding patch contracts and scoring discipline. | Implement a mini SWE-style local task with patch extraction and tests. |
+| 托管 agent 运行时 | OpenAI Agents SDK | 为 agent、handoff、guardrail、session、tracing、MCP 和 sandbox agent 提供轻量级原语。 | 构建一个会产出文件的 agent，带 tracing 和一个简单 guardrail。 |
+| 有状态编排 | LangGraph | 面向长时间运行、有状态 agent 的低层编排运行时，支持持久执行、streaming、human-in-the-loop 和 persistence。 | 构建一个带 checkpointing 和 interruption 的双节点 graph。 |
+| 多 agent 系统 | AutoGen | AgentChat 用于对话式 agent，Core 用于事件驱动的多 agent 系统。 | 构建一个有轮次上限的双 agent reviewer/implementer 循环。 |
+| 评测框架 | Inspect AI | 包含 dataset、solver、scorer、agent tool、sandboxing、log 和 external-agent bridge 的评测任务框架。 | 创建一个带确定性评分的小型代码编辑 eval。 |
+| 编码基准契约 | SWE-bench | 真实世界 issue 修复基准形态；有助于理解 patch 契约和评分纪律。 | 实现一个迷你 SWE 风格本地任务，包含 patch 提取和测试。 |
 
-## Research Signals
+## 研究信号
 
-Recent harness-focused work frames performance as a model-harness-environment system rather than only a model capability problem. Useful dimensions to track:
+近期以 harness 为中心的研究，把性能看作 model-harness-environment 系统问题，而不仅是模型能力问题。值得跟踪的维度包括：
 
-- Task specification quality.
-- Context selection.
-- Tool access and permissioning.
-- Project memory.
-- Task state.
-- Observability.
-- Failure attribution.
-- Verification.
-- Entropy and nondeterminism auditing.
-- Intervention recording.
+- 任务规格质量。
+- 上下文选择。
+- 工具访问与权限。
+- 项目记忆。
+- 任务状态。
+- 可观测性。
+- 失败归因。
+- 验证。
+- 熵与非确定性审计。
+- 干预记录。
 
-## Evaluation Axes
+## 评测轴
 
-Use the same axes across experiments unless a task clearly needs different ones:
+除非任务明显需要不同维度，否则跨实验使用相同评测轴：
 
-| Axis | Measurement |
+| 评测轴 | 度量方式 |
 | --- | --- |
-| Success | Pass/fail plus task-specific score. |
-| Cost | Model tokens, API cost estimate, wall time, retries. |
-| Reliability | Variance across repeated runs. |
-| Debuggability | Trace completeness, replayability, failure attribution quality. |
-| Control | Human approval hooks, permission boundaries, interrupt/resume behavior. |
-| Portability | Model/provider coupling, framework coupling, environment assumptions. |
-| Maintainability | Amount of glue code, clarity of state model, testability. |
+| 成功 | 通过/失败，加任务特定分数。 |
+| 成本 | 模型 token、API 成本估算、墙钟时间、重试次数。 |
+| 可靠性 | 多次重复运行之间的方差。 |
+| 可调试性 | trace 完整性、可重放性、失败归因质量。 |
+| 控制 | 人工审批 hook、权限边界、中断/恢复行为。 |
+| 可移植性 | 模型/供应商耦合、框架耦合、环境假设。 |
+| 可维护性 | 胶水代码量、状态模型清晰度、可测试性。 |
 
-## Initial Hypothesis
+## 初始假设
 
-For software-engineering agents, the harness matters as much as the model once the task requires real tools, state, or verification. The first useful experiments should therefore compare:
+对于软件工程 agent，一旦任务需要真实工具、状态或验证，harness 与模型同样重要。因此，第一批有用实验应该比较：
 
-1. The same task across different harnesses with the same model where possible.
-2. The same harness across different models.
-3. Minimal loop versus instrumented loop with tracing, verification, and failure attribution.
+1. 在可行时，用同一模型在不同 harness 上执行同一任务。
+2. 用同一 harness 搭配不同模型。
+3. 最小循环与带 tracing、verification 和 failure attribution 的仪表化循环。

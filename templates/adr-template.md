@@ -1,26 +1,25 @@
-# NNNN: Title
+# NNNN：标题
 
-Date: YYYY-MM-DD
+日期：YYYY-MM-DD
 
-## Status
+## 状态
 
-Proposed
+提议中
 
-## Context
+## 背景
 
-What decision needs to be made, and why now?
+需要做出什么决策，为什么是现在？
 
-## Decision
+## 决策
 
-What are we choosing?
+我们选择什么？
 
-## Consequences
+## 后果
 
-What improves, what gets harder, and what must be revisited?
+什么会改善，什么会变难，什么必须重新审视？
 
-## Evidence
+## 证据
 
-- Source links.
-- Experiments.
-- Evaluation results.
-
+- 来源链接。
+- 实验。
+- 评测结果。

@@ -1,24 +1,23 @@
-# Evaluations
+# 评测
 
-This directory is for reusable evaluation tasks and analysis.
+这个目录用于可复用的评测任务和分析。
 
-Keep these concerns separate:
+保持这些关注点相互分离：
 
-- `tasks/`: task definitions and fixtures.
-- `scorers/`: deterministic checks, model graders, rubrics.
-- `logs/`: raw run logs and transcripts.
-- `analysis/`: summaries, comparisons, charts, decisions.
+- `tasks/`：任务定义和 fixtures。
+- `scorers/`：确定性检查、模型评分器、评分量规。
+- `logs/`：原始运行日志和 transcripts。
+- `analysis/`：摘要、比较、图表、决策。
 
-## Evaluation Rule
+## 评测规则
 
-An eval result is incomplete unless it includes:
+一项 eval 结果必须包含以下内容，否则就是不完整的：
 
-- Task version.
-- Harness version.
-- Model version.
-- Tool permissions.
-- Runtime budget.
-- Scoring method.
-- Raw logs.
-- Final score.
-
+- 任务版本。
+- Harness 版本。
+- 模型版本。
+- 工具权限。
+- 运行时预算。
+- 评分方法。
+- 原始日志。
+- 最终分数。

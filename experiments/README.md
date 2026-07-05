@@ -1,8 +1,8 @@
-# Experiments
+# 实验
 
-Each experiment should be small enough to rerun.
+每个实验都应小到可以重新运行。
 
-Use this structure:
+使用这个结构：
 
 ```text
 experiments/YYYY-MM-DD-short-name/
@@ -13,18 +13,17 @@ experiments/YYYY-MM-DD-short-name/
 └── artifacts/
 ```
 
-## Experiment Template
+## 实验模板
 
-Include:
+包含：
 
-- Question.
-- Harness or framework tested.
-- Model and version.
-- Task.
-- Budget.
-- Commands.
-- Raw output location.
-- Result.
-- Failure notes.
-- Next decision.
-
+- 问题。
+- 被测试的 harness 或框架。
+- 模型和版本。
+- 任务。
+- 预算。
+- 命令。
+- 原始输出位置。
+- 结果。
+- 失败笔记。
+- 下一步决策。

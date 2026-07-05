@@ -1,35 +1,40 @@
-# Workspace Instructions
+# 工作区说明
 
-This repo is an AI agent harness exploration lab.
+本仓库是一个 AI agent harness 探索实验室。
 
-## Operating Principles
+## 语言约定
 
-- Prefer current primary sources: official docs, repos, release notes, benchmark pages, and papers.
-- Date all external claims. This field changes quickly.
-- Keep experiments reproducible before making broad conclusions.
-- Separate observations from recommendations.
-- Record failed experiments; they are useful evidence.
-- Do not introduce heavy framework dependencies until a concrete experiment needs them.
+- 本 workspace 默认使用简体中文书写说明、文档、注释性实验记录和最终报告。
+- 保留英文专有名词、产品名、API 名、命令、路径、文件名、版本号、提交哈希和原始引用标题，除非上下文明确需要翻译。
+- 外部引用和链接保持原样，避免因翻译破坏可追溯性。
 
-## Expected Workflow
+## 运行原则
 
-When making changes here:
+- 优先使用当前的一手来源：官方文档、代码仓库、发布说明、基准页面和论文。
+- 所有外部事实性判断都要标注日期。这个领域变化很快。
+- 在得出宽泛结论之前，先保证实验可复现。
+- 区分观察结果和建议。
+- 记录失败实验；它们也是有价值的证据。
+- 在具体实验需要之前，不要引入重量级框架依赖。
 
-1. Read `README.md`, `docs/radar.md`, and relevant experiment or eval notes first.
-2. If the task involves current tools, verify official sources before updating claims.
-3. Add or update source links in `docs/source-map.md`.
-4. For experiments, create a subdirectory under `experiments/` with:
+## 预期工作流
+
+在这里进行改动时：
+
+1. 先阅读 `README.md`、`docs/radar.md`，以及相关实验或评测笔记。
+2. 如果任务涉及当前工具，在更新事实性判断前先核验官方来源。
+3. 在 `docs/source-map.md` 中新增或更新来源链接。
+4. 对于实验，在 `experiments/` 下创建子目录，并包含：
    - `README.md`
-   - setup commands
-   - run commands
-   - result notes
-   - known limitations
-5. For evaluations, keep task definition, scoring method, raw logs, and analysis separate.
+   - 安装/准备命令
+   - 运行命令
+   - 结果笔记
+   - 已知限制
+5. 对于评测，保持任务定义、评分方法、原始日志和分析相互分离。
 
-## Quality Bar
+## 质量标准
 
-- Favor small, runnable probes over large speculative scaffolds.
-- Every comparison should name the task class being compared.
-- A harness is only "effective" relative to a workload, budget, and risk profile.
-- Preserve exact versions and dates for anything benchmark-related.
-
+- 优先做小而可运行的探针，而不是大型推测性脚手架。
+- 每个比较都应说明被比较的任务类别。
+- harness 是否“有效”只在特定工作负载、预算和风险画像下才有意义。
+- 对任何与基准有关的内容，保留精确版本和日期。

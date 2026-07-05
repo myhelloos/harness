@@ -1,49 +1,48 @@
-# Harness Principles
+# Harness 原则
 
-Checked: 2026-07-05 Asia/Shanghai
+检查日期：2026-07-05 Asia/Shanghai
 
-## Definition
+## 定义
 
-An AI agent harness is the runtime substrate around a model-driven agent. It controls how the agent receives a task, observes state, selects context, calls tools, updates memory, handles errors, involves humans, verifies work, and records evidence.
+AI agent harness 是围绕模型驱动 agent 的运行时基底。它控制 agent 如何接收任务、观察状态、选择上下文、调用工具、更新记忆、处理错误、引入人工、验证工作并记录证据。
 
-## What A Good Harness Must Make Explicit
+## 好的 Harness 必须明确什么
 
-- Task contract: objective, constraints, inputs, expected artifacts, done criteria.
-- State contract: what is transient, persisted, resumable, and replayable.
-- Tool contract: available tools, permissions, schemas, side effects, approval rules.
-- Context contract: how context is selected, compressed, and refreshed.
-- Verification contract: tests, scorers, invariants, manual review steps.
-- Evidence contract: traces, logs, patches, screenshots, costs, and final reports.
-- Intervention contract: when humans can approve, redirect, interrupt, or resume.
+- 任务契约：目标、约束、输入、预期 artifact、完成标准。
+- 状态契约：哪些内容是临时的、持久化的、可恢复的、可重放的。
+- 工具契约：可用工具、权限、schema、副作用、审批规则。
+- 上下文契约：如何选择、压缩和刷新上下文。
+- 验证契约：测试、评分器、不变量、人工审查步骤。
+- 证据契约：trace、日志、patch、截图、成本和最终报告。
+- 干预契约：人工何时可以审批、重定向、中断或恢复。
 
-## Anti-Patterns
+## 反模式
 
-- Treating a prompt as the whole harness.
-- Comparing agents without fixing task, model, tool access, and budget.
-- Counting success without preserving transcripts and verification evidence.
-- Letting agents run with broad tools and unclear permissions.
-- Adding multi-agent orchestration before the single-agent loop is measurable.
-- Relying on model self-assessment as the only scorer.
+- 把 prompt 当作整个 harness。
+- 在未固定任务、模型、工具访问和预算的情况下比较 agent。
+- 统计成功率却不保留 transcript 和验证证据。
+- 让 agent 在工具范围很宽且权限不清晰的情况下运行。
+- 在单 agent 循环尚不可度量之前就加入多 agent 编排。
+- 把模型自评作为唯一评分器。
 
-## Minimum Viable Harness
+## 最小可用 Harness
 
-A useful first harness for local experiments needs:
+用于本地实验的第一个有用 harness 需要：
 
-- Structured task input.
-- Bounded agent loop.
-- Tool registry.
-- Workspace isolation story.
-- Trace log.
-- Deterministic verifier.
-- Cost and latency capture.
-- Final artifact bundle.
+- 结构化任务输入。
+- 有边界的 agent 循环。
+- 工具注册表。
+- workspace 隔离方案。
+- Trace log。
+- 确定性 verifier。
+- 成本和延迟采集。
+- 最终 artifact bundle。
 
-## Maturity Ladder
+## 成熟度阶梯
 
-| Level | Description | Evidence |
+| 等级 | 描述 | 证据 |
 | --- | --- | --- |
-| H0 | Prompt plus manual tool use. | Final answer only. |
-| H1 | Scripted loop with explicit tools and limits. | Transcript and final artifact. |
-| H2 | Instrumented loop with verification and failure attribution. | Trace, verifier output, cost, failure categories. |
-| H3 | Production-style harness with persistence, approvals, rollback, and eval gates. | Replayable runs, policy logs, eval history, deployment controls. |
-
+| H0 | Prompt 加人工工具使用。 | 只有最终答案。 |
+| H1 | 带显式工具和限制的脚本化循环。 | Transcript 和最终 artifact。 |
+| H2 | 带 verification 和 failure attribution 的仪表化循环。 | Trace、verifier 输出、成本、失败类别。 |
+| H3 | 带 persistence、approvals、rollback 和 eval gates 的生产风格 harness。 | 可重放运行、policy logs、eval history、deployment controls。 |
