@@ -1,6 +1,6 @@
 # 来源地图
 
-检查日期：2026-07-05 Asia/Shanghai
+检查日期：2026-07-06 Asia/Shanghai
 
 使用这个文件保持外部事实性判断的新鲜度。优先使用一手来源。
 
@@ -24,9 +24,13 @@
 | Agent harness software design principles | ./software-design-principles-in-agent-harnesses.md | 本地分析模型：可组合性、关注点分离、单一职责、开闭、依赖倒置、事件驱动、显式状态、最小权限、可观测性优先。 |
 | Agentic Loop Java backend practice | ./agentic-loop-java-backend-practice.md | 本地实践模型：Agentic Loop 的机制、最佳实践与 Java 后端日常工作流。 |
 | Four-layer harness architecture | ./four-layer-harness-architecture.md | 本地工作模型：记忆层、扩展层、集成层、编程层。 |
+| Coding agent memory systems | ./coding-agent-memory-systems.md | 本地综合笔记：Claude Code 五层记忆体系、`CLAUDE.md` 写作方法、团队分歧分层、条件化规则，以及 Codex、LangGraph、AutoGen、Cursor 记忆设计对照。 |
 | Claude Code memory | https://code.claude.com/docs/en/memory | `CLAUDE.md`、auto memory、加载顺序、imports，以及 memory-as-context 区分。 |
 | Claude Code hooks | https://code.claude.com/docs/en/hooks | Lifecycle hooks、`PreToolUse`、`Stop`、compaction、permission、prompt 和 agent hooks。 |
 | Claude Code settings | https://code.claude.com/docs/en/settings | Settings scopes、permissions、managed policy、sandbox、hooks、MCP 和 tool behavior。 |
+| Claude Code permissions | https://code.claude.com/docs/en/permissions | Permission rules、allow/ask/deny、工具访问控制，以及与 sandboxing 的互补关系。 |
+| Claude Code sandbox environments | https://code.claude.com/docs/en/sandbox-environments | Sandboxed Bash、sandbox runtime、dev container、custom container、VM 和 Claude Code on the web 的隔离边界。 |
+| Claude Code Bash sandboxing | https://code.claude.com/docs/en/sandboxing | Bash sandbox 模式、auto-allow、filesystem/network 约束、unsandboxed command 处理。 |
 | Claude Code MCP | https://code.claude.com/docs/en/mcp | 外部工具和数据集成。 |
 | Cursor rules | https://cursor.com/docs/rules.md | Project、user 和 team rules；`AGENTS.md`；rule activation 和 precedence。 |
 | Cursor run modes | https://cursor.com/docs/agent/security/run-modes.md | Auto-review、Allowlist、Run Everything、sandboxing、`permissions.json` 和 `sandbox.json`。 |
