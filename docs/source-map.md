@@ -21,6 +21,7 @@
 
 | 主题 | 来源 | 说明 |
 | --- | --- | --- |
+| Four-layer harness architecture | ./four-layer-harness-architecture.md | 本地工作模型：记忆层、扩展层、集成层、编程层。 |
 | Claude Code memory | https://code.claude.com/docs/en/memory | `CLAUDE.md`、auto memory、加载顺序、imports，以及 memory-as-context 区分。 |
 | Claude Code hooks | https://code.claude.com/docs/en/hooks | Lifecycle hooks、`PreToolUse`、`Stop`、compaction、permission、prompt 和 agent hooks。 |
 | Claude Code settings | https://code.claude.com/docs/en/settings | Settings scopes、permissions、managed policy、sandbox、hooks、MCP 和 tool behavior。 |
