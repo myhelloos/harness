@@ -26,6 +26,7 @@
 | Four-layer harness architecture | ./four-layer-harness-architecture.md | 本地工作模型：记忆层、扩展层、集成层、编程层。 |
 | Coding agent memory systems | ./coding-agent-memory-systems.md | 本地综合笔记：Claude Code 五层记忆体系、`CLAUDE.md` 写作方法、团队分歧分层、条件化规则，以及 Codex、LangGraph、AutoGen、Cursor 记忆设计对照。 |
 | Codex Skills design guide | ./codex-skills-design-guide.md | 本地综合笔记：Codex Skills 的触发机制、渐进式披露、`SKILL.md` 路由器定位、references/scripts/assets 分层、权限边界、动态上下文和设计模式。 |
+| Delegated thinking with subagents | ./delegated-thinking-with-subagents.md | 本地综合笔记：子智能体预加载 Skill、Skill 派生子智能体、委派模板、常见委派类型、主智能体责任边界和现代 AI 工程设计模式。 |
 | Codex Skills | https://developers.openai.com/codex/skills | Skills 是 `SKILL.md` 加可选 references/scripts/assets 的可复用工作流；覆盖显式/隐式触发、`allow_implicit_invocation`、存放位置和 best practices。 |
 | Codex Customization | https://developers.openai.com/codex/concepts/customization | Codex 定制层：`AGENTS.md`、memories、Skills、MCP、subagents 的边界与组合方式。 |
 | Codex agent approvals and security | https://developers.openai.com/codex/agent-approvals-security | Codex sandbox、approval policy、network access、危险操作审批和运行时安全边界。 |
