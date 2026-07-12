@@ -1,0 +1,64 @@
+{
+  "deny_writes_outside_workspace": true,
+  "protected_paths": [
+    ".env",
+    ".env.*",
+    ".git/**",
+    "credentials.*",
+    "**/credentials.*",
+    "secrets/**",
+    "**/secrets/**"
+  ],
+  "secret_patterns": [
+    {
+      "name": "private key",
+      "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----"
+    },
+    {
+      "name": "GitHub token",
+      "pattern": "\\bgh[pousr]_[A-Za-z0-9]{20,}\\b"
+    },
+    {
+      "name": "AWS access key",
+      "pattern": "\\b(?:AKIA|ASIA)[A-Z0-9]{16}\\b"
+    },
+    {
+      "name": "credential assignment",
+      "pattern": "\\b(?:api[_-]?key|access[_-]?token|password)\\s*[:=]\\s*[\\\"']?[A-Za-z0-9_./+\\-=]{16,}"
+    }
+  ],
+  "deny_commands": [
+    {
+      "name": "recursive deletion of root or home",
+      "pattern": "(?:^|[;&|])\\s*(?:sudo\\s+)?rm\\s+[^\\n]*(?:-rf|-fr)[^\\n]*\\s(?:/|~)(?:\\s|$)"
+    },
+    {
+      "name": "split-flag recursive deletion of root or home",
+      "pattern": "(?:^|[;&|])\\s*(?:sudo\\s+)?rm\\s+[^\\n]*(?:-r\\s+-f|-f\\s+-r|--recursive\\s+--force|--force\\s+--recursive)[^\\n]*\\s(?:/|~)(?:\\s|$)"
+    },
+    {
+      "name": "destructive git reset",
+      "pattern": "(?:^|[;&|])\\s*git\\s+reset\\s+--hard(?:\\s|$)"
+    },
+    {
+      "name": "destructive git clean",
+      "pattern": "(?:^|[;&|])\\s*git\\s+clean\\s+[^\\n]*-[^\\n]*f"
+    }
+  ],
+  "ask_commands": [
+    {
+      "name": "force push",
+      "pattern": "(?:^|[;&|])\\s*git\\s+push\\b[^\\n]*(?:--force|-f)(?:\\s|$)"
+    },
+    {
+      "name": "infrastructure mutation",
+      "pattern": "(?:^|[;&|])\\s*(?:terraform\\s+(?:apply|destroy)|kubectl\\s+(?:apply|delete)|helm\\s+(?:install|upgrade|uninstall))\\b"
+    }
+  ],
+  "ask_tools": [
+    {
+      "name": "state-changing MCP tool",
+      "pattern": "^mcp__.*__(?:create|delete|publish|send|update|write).*$"
+    }
+  ]
+}

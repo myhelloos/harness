@@ -1,0 +1,18 @@
+{
+  "formatters": [
+    {
+      "name": "test formatter",
+      "suffixes": [".py"],
+      "argv": ["/usr/bin/true"],
+      "timeout_seconds": 5,
+      "required": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "passing check",
+      "argv": ["/usr/bin/true"],
+      "timeout_seconds": 5
+    }
+  ]
+}

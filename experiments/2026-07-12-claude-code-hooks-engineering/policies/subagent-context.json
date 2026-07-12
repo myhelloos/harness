@@ -1,0 +1,35 @@
+{
+  "agents": {
+    "default": {
+      "context": [
+        "Work only on the delegated task; do not broaden scope.",
+        "Separate observed evidence from recommendations.",
+        "Return concise results to minimize parent-context pollution."
+      ],
+      "required_sections": ["Summary", "Evidence", "Unknowns"]
+    },
+    "Explore": {
+      "context": [
+        "This is a read-only discovery task. Do not propose edits unless asked.",
+        "Cite repository-relative file paths and line numbers for every material claim.",
+        "Return only findings needed by the parent task; omit raw search logs."
+      ],
+      "required_sections": ["Summary", "Evidence", "Unknowns"]
+    },
+    "Plan": {
+      "context": [
+        "Do not edit files. Identify ownership boundaries, dependencies, verification steps, and rollback risks.",
+        "Mark assumptions explicitly and keep the plan proportional to the requested change."
+      ],
+      "required_sections": ["Plan", "Evidence", "Risks"]
+    },
+    "security-reviewer": {
+      "context": [
+        "Review only changed trust boundaries and attacker-controlled inputs.",
+        "Prioritize exploitable findings over style observations.",
+        "Each finding must include severity, evidence, impact, and a concrete remediation."
+      ],
+      "required_sections": ["Summary", "Findings", "Evidence", "Unknowns"]
+    }
+  }
+}

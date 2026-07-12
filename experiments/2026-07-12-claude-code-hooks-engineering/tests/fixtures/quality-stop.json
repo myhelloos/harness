@@ -1,0 +1,9 @@
+{
+  "session_id": "session-test",
+  "transcript_path": null,
+  "cwd": "/tmp",
+  "permission_mode": "default",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "last_assistant_message": "Implementation complete"
+}

@@ -1,0 +1,84 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/security_guard.py"],
+            "timeout": 5,
+            "statusMessage": "Scanning prompt for secrets"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^(?:Bash|PowerShell|Edit|Write|NotebookEdit|mcp__.*)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/security_guard.py"],
+            "timeout": 5,
+            "statusMessage": "Applying repository security policy"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/quality_automation.py"],
+            "timeout": 60,
+            "statusMessage": "Running targeted formatter"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/quality_automation.py"],
+            "timeout": 180,
+            "statusMessage": "Running final quality gate"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "Explore|Plan|security-reviewer|general-purpose",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/subagent_context.py"],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "Explore|Plan|security-reviewer|general-purpose",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/experiments/2026-07-12-claude-code-hooks-engineering/hooks/subagent_context.py"],
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

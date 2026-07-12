@@ -27,3 +27,7 @@ experiments/YYYY-MM-DD-short-name/
 - 结果。
 - 失败笔记。
 - 下一步决策。
+
+## 当前实验
+
+- [2026-07-12 Claude Code hooks 工程实战](./2026-07-12-claude-code-hooks-engineering/README.md)：安全防护、代码质量自动化与子智能体精确上下文管理；包含可执行 handlers、JSON policies、fixtures 和原始结果。

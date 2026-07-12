@@ -1,0 +1,27 @@
+test_formatter_success_adds_context (__main__.QualityAutomationTests.test_formatter_success_adds_context) ... ok
+test_repeated_stop_failure_does_not_loop (__main__.QualityAutomationTests.test_repeated_stop_failure_does_not_loop) ... ok
+test_stop_failure_requests_continuation (__main__.QualityAutomationTests.test_stop_failure_requests_continuation) ... ok
+test_stop_success_has_no_decision (__main__.QualityAutomationTests.test_stop_success_has_no_decision) ... ok
+test_dangerous_command_is_denied (__main__.SecurityGuardTests.test_dangerous_command_is_denied) ... ok
+test_force_push_requires_confirmation (__main__.SecurityGuardTests.test_force_push_requires_confirmation) ... ok
+test_protected_write_is_denied (__main__.SecurityGuardTests.test_protected_write_is_denied) ... ok
+test_safe_command_has_no_decision (__main__.SecurityGuardTests.test_safe_command_has_no_decision) ... ok
+test_secret_prompt_is_blocked_without_echoing_secret (__main__.SecurityGuardTests.test_secret_prompt_is_blocked_without_echoing_secret) ... ok
+test_complete_output_can_stop (__main__.SubagentContextTests.test_complete_output_can_stop) ... ok
+test_incomplete_output_keeps_subagent_running (__main__.SubagentContextTests.test_incomplete_output_keeps_subagent_running) ... ok
+test_repeated_incomplete_output_does_not_loop (__main__.SubagentContextTests.test_repeated_incomplete_output_does_not_loop) ... ok
+test_start_injects_agent_specific_context (__main__.SubagentContextTests.test_start_injects_agent_specific_context) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.300s
+
+OK
+
+Representative security output:
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"blocked by security policy: destructive git reset"}}
+
+Representative quality output:
+{"decision":"block","reason":"Quality gate failed:\n- failing check: status=completed, returncode=1"}
+
+Representative subagent output:
+{"hookSpecificOutput":{"hookEventName":"SubagentStart","additionalContext":"Scoped contract for subagent type Explore:\n- This is a read-only discovery task. Do not propose edits unless asked.\n- Cite repository-relative file paths and line numbers for every material claim.\n- Return only findings needed by the parent task; omit raw search logs.\n- Final response must contain these Markdown sections: Summary, Evidence, Unknowns"}}

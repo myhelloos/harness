@@ -1,0 +1,9 @@
+{
+  "session_id": "session-test",
+  "transcript_path": null,
+  "cwd": "/tmp/project",
+  "permission_mode": "default",
+  "hook_event_name": "SubagentStart",
+  "agent_id": "agent-explore",
+  "agent_type": "Explore"
+}

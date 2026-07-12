@@ -1,0 +1,10 @@
+{
+  "formatters": [],
+  "checks": [
+    {
+      "name": "failing check",
+      "argv": ["/usr/bin/false"],
+      "timeout_seconds": 5
+    }
+  ]
+}

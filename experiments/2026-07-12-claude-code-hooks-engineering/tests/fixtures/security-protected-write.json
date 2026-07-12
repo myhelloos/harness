@@ -1,0 +1,13 @@
+{
+  "session_id": "session-test",
+  "transcript_path": null,
+  "cwd": "/tmp/project",
+  "permission_mode": "default",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "/tmp/project/.env",
+    "content": "EXAMPLE=true"
+  },
+  "tool_use_id": "tool-write"
+}

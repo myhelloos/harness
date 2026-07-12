@@ -1,6 +1,6 @@
 # Coding Agent Harness 比较
 
-检查日期：2026-07-05 Asia/Shanghai
+检查日期：2026-07-12 Asia/Shanghai
 
 本文将 Claude Code、Cursor 和 Codex 作为 coding-agent harness 进行比较。比较围绕五个问题：
 
@@ -42,7 +42,7 @@ Auto memory 允许 Claude 根据纠正和偏好写入笔记。`CLAUDE.md` 和 au
 
 工具层包括文件读取和编辑、搜索、shell 命令、MCP tools、subagents、hooks、background agents 和 Agent SDK workflows。MCP 是主要的外部集成机制。
 
-约束通过 settings、permission rules、sandboxing、managed policy 和 lifecycle hooks 分层施加。`PreToolUse` hooks 可以在工具调用执行前拒绝它。`Stop` hooks 可以要求 Claude 在结束前完成额外工作。Agent hooks 可以启动一个带工具的 subagent 来检查文件或运行测试。
+约束通过 settings、permission rules、sandboxing、managed policy 和 lifecycle hooks 分层施加。`PreToolUse` hooks 可以在工具调用执行前拒绝它。`Stop` hooks 可以要求 Claude 在结束前完成额外工作。Agent hooks 可以启动一个带工具的 subagent 来检查文件或运行测试。Claude Code 与 Codex 的事件和控制能力详见[独立生命周期对比](./claude-code-codex-hook-lifecycle.md)。
 
 Claude Code 最强的差异点是 persistent memory 与丰富 hook lifecycle 的组合。
 
@@ -80,7 +80,7 @@ Codex 拥有最显式的 sandbox 和 approval 模型：
 - Sandbox mode 或 permission profiles 控制文件系统和网络访问。
 - 默认本地行为会关闭网络访问，并将写入限制在 workspace 内。
 - 文件和网络规则可以定义精确的 read、write、deny 和 domain policy。
-- Hooks 可以围绕 lifecycle events 和 tool calls 运行。
+- Hooks 可以围绕当前公开的 10 个 lifecycle events 运行，但 command handler 是唯一实际执行的类型，且工具拦截路径尚不完整；因此它是 guardrail，不是 sandbox 的替代品。
 - Managed requirements 可以限制 sandbox modes、approvals、web search modes、hooks、MCP 等。
 - 除非显式配置，subagents 会继承 sandbox policy。
 

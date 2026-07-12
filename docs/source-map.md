@@ -1,6 +1,6 @@
 # 来源地图
 
-检查日期：2026-07-09 Asia/Shanghai
+检查日期：2026-07-13 Asia/Shanghai
 
 使用这个文件保持外部事实性判断的新鲜度。优先使用一手来源。
 
@@ -27,12 +27,17 @@
 | Coding agent memory systems | ./coding-agent-memory-systems.md | 本地综合笔记：Claude Code 五层记忆体系、`CLAUDE.md` 写作方法、团队分歧分层、条件化规则，以及 Codex、LangGraph、AutoGen、Cursor 记忆设计对照。 |
 | Codex Skills design guide | ./codex-skills-design-guide.md | 本地综合笔记：Codex Skills 的触发机制、渐进式披露、`SKILL.md` 路由器定位、references/scripts/assets 分层、权限边界、动态上下文和设计模式。 |
 | Delegated thinking with subagents | ./delegated-thinking-with-subagents.md | 本地综合笔记：子智能体预加载 Skill、Skill 派生子智能体、委派模板、常见委派类型、主智能体责任边界和现代 AI 工程设计模式。 |
+| Claude Code and Codex hook lifecycle | ./claude-code-codex-hook-lifecycle.md | 本地对比：两者公开 hook 事件矩阵、同名事件语义、handler 能力、治理用途与安全边界；核验日期 2026-07-12。 |
+| Claude Code hook output protocol | ./claude-code-hook-output-protocol.md | 本地协议说明：hook transport、exit code、通用 JSON、顶层 decision、`hookSpecificOutput`、字段路由、事件 schema、常见错误与调试。核验日期 2026-07-12。 |
+| Claude Code hooks engineering practice | ../experiments/2026-07-12-claude-code-hooks-engineering/README.md | 可运行探针：安全防护、代码质量自动化、子智能体精确上下文管理；13 个 fixture cases，Python 标准库实现。实验日期 2026-07-12。 |
+| Claude Code hooks execution foundation | ./claude-code-hooks-execution-foundation.md | 本次会话汇总主文档：生命周期、输出协议、三类工程实践，以及从软提示到 harness 内硬约束、capability boundary 和外部治理门禁的分层方法。官方契约核验日期 2026-07-13。 |
 | Codex Skills | https://developers.openai.com/codex/skills | Skills 是 `SKILL.md` 加可选 references/scripts/assets 的可复用工作流；覆盖显式/隐式触发、`allow_implicit_invocation`、存放位置和 best practices。 |
 | Codex Customization | https://developers.openai.com/codex/concepts/customization | Codex 定制层：`AGENTS.md`、memories、Skills、MCP、subagents 的边界与组合方式。 |
 | Codex agent approvals and security | https://developers.openai.com/codex/agent-approvals-security | Codex sandbox、approval policy、network access、危险操作审批和运行时安全边界。 |
-| Codex hooks | https://developers.openai.com/codex/hooks | Codex lifecycle hooks：`PreToolUse`、`PermissionRequest`、`PostToolUse` 等事件，用于工具调用治理。 |
+| Codex hooks | https://developers.openai.com/codex/hooks | Codex release behavior reference；当前列出 10 个 hook 事件、command handler、trust review、输入输出与尚未实现/未完整覆盖的能力。2026-07-13 复核。 |
 | Claude Code memory | https://code.claude.com/docs/en/memory | `CLAUDE.md`、auto memory、加载顺序、imports，以及 memory-as-context 区分。 |
-| Claude Code hooks | https://code.claude.com/docs/en/hooks | Lifecycle hooks、`PreToolUse`、`Stop`、compaction、permission、prompt 和 agent hooks。 |
+| Claude Code hooks | https://code.claude.com/docs/en/hooks | 当前列出 30 个 lifecycle hook 事件，覆盖 session、turn、tool、subagent/task/team、compaction、runtime、worktree 和 MCP elicitation；含 command、HTTP、MCP tool、prompt、agent handlers。2026-07-13 复核。 |
+| Claude Code hooks guide | https://code.claude.com/docs/en/hooks-guide | Hook 自动化示例、exit code/structured output、matcher、并发和故障排查。2026-07-13 复核。 |
 | Claude Code settings | https://code.claude.com/docs/en/settings | Settings scopes、permissions、managed policy、sandbox、hooks、MCP 和 tool behavior。 |
 | Claude Code permissions | https://code.claude.com/docs/en/permissions | Permission rules、allow/ask/deny、工具访问控制，以及与 sandboxing 的互补关系。 |
 | Claude Code sandbox environments | https://code.claude.com/docs/en/sandbox-environments | Sandboxed Bash、sandbox runtime、dev container、custom container、VM 和 Claude Code on the web 的隔离边界。 |

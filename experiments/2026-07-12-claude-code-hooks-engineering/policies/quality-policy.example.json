@@ -1,0 +1,32 @@
+{
+  "formatters": [
+    {
+      "name": "ruff format",
+      "suffixes": [".py"],
+      "argv": ["ruff", "format", "{file}"],
+      "timeout_seconds": 30,
+      "required": false
+    },
+    {
+      "name": "prettier",
+      "suffixes": [".js", ".jsx", ".ts", ".tsx", ".json", ".css"],
+      "argv": ["./node_modules/.bin/prettier", "--write", "{file}"],
+      "timeout_seconds": 30,
+      "required": false
+    },
+    {
+      "name": "gofmt",
+      "suffixes": [".go"],
+      "argv": ["gofmt", "-w", "{file}"],
+      "timeout_seconds": 30,
+      "required": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "git diff whitespace check",
+      "argv": ["git", "diff", "--check"],
+      "timeout_seconds": 30
+    }
+  ]
+}

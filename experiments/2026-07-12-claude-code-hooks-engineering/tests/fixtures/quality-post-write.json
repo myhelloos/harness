@@ -1,0 +1,17 @@
+{
+  "session_id": "session-test",
+  "transcript_path": null,
+  "cwd": "/tmp",
+  "permission_mode": "default",
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "/tmp/example.py",
+    "content": "print('ok')"
+  },
+  "tool_response": {
+    "filePath": "/tmp/example.py",
+    "success": true
+  },
+  "tool_use_id": "tool-format"
+}
