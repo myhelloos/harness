@@ -1,6 +1,6 @@
 # 来源地图
 
-检查日期：2026-07-13 Asia/Shanghai
+检查日期：2026-07-15 Asia/Shanghai
 
 使用这个文件保持外部事实性判断的新鲜度。优先使用一手来源。
 
@@ -21,6 +21,7 @@
 
 | 主题 | 来源 | 说明 |
 | --- | --- | --- |
+| Harness 工程化思维 | ./harness-engineering-mindset.md | 本地综合框架：机制因果链、认知/控制/证据三平面、决策载体、分级约束、个人经验到团队公共资产的晋升与治理。形成日期 2026-07-15。 |
 | Agent harness software design principles | ./software-design-principles-in-agent-harnesses.md | 本地分析模型：可组合性、关注点分离、单一职责、开闭、依赖倒置、事件驱动、显式状态、最小权限、可观测性优先。 |
 | Agentic Loop Java backend practice | ./agentic-loop-java-backend-practice.md | 本地实践模型：Agentic Loop 的机制、最佳实践与 Java 后端日常工作流。 |
 | Four-layer harness architecture | ./four-layer-harness-architecture.md | 本地工作模型：记忆层、扩展层、集成层、编程层。 |
@@ -46,6 +47,28 @@
 | Cursor rules | https://cursor.com/docs/rules.md | Project、user 和 team rules；`AGENTS.md`；rule activation 和 precedence。 |
 | Cursor run modes | https://cursor.com/docs/agent/security/run-modes.md | Auto-review、Allowlist、Run Everything、sandboxing、`permissions.json` 和 `sandbox.json`。 |
 | Cursor MCP | https://cursor.com/docs/mcp.md | MCP transports、tools、resources、apps、approval、enterprise controls 和 security notes。 |
+
+## Spec-driven workflow 与 Plugins
+
+| 主题 | 来源 | 说明 |
+| --- | --- | --- |
+| 长期演进复杂多服务系统中的 Harness 工程实践 | ./harness-engineering-practice-for-evolving-multiservice-systems.md | 本地综合报告：成本、调试、安全、规模、指令、协作六维实践；边界假设、跨服务变更控制面；OpenSpec + Compound Engineering + grill-me 组合与 2026-07 plugin 建议。外部事实核验日期 2026-07-15。 |
+| OpenSpec | https://github.com/Fission-AI/OpenSpec | Spec-driven development；`specs/` 当前事实、`changes/` 拟议 delta、archive 合并。核验版本 `v1.6.0`，发布于 2026-07-10。 |
+| OpenSpec Core Concepts | https://github.com/Fission-AI/OpenSpec/blob/main/docs/overview.md | Specs、changes、delta specs、artifact dependency 和 archive 的官方模型。2026-07-15 复核。 |
+| OpenSpec Existing Projects | https://github.com/Fission-AI/OpenSpec/blob/main/docs/existing-projects.md | Brownfield-first：按实际变更逐步积累规格，不要求先完整记录整个旧系统。2026-07-15 复核。 |
+| OpenSpec Stores beta | https://github.com/Fission-AI/OpenSpec/blob/main/docs/stores-beta/user-guide.md | 跨 repo planning store、read-only references、worksets；官方明确为 beta，命令、flag、文件格式和 JSON 可能变化。2026-07-15 复核。 |
+| Compound Engineering | https://github.com/EveryInc/compound-engineering-plugin | Plan/work/review/compound 工作流；核验 release `compound-engineering-v3.19.0`（2026-07-08），提交 `1756c0b9f3cf94493f287ea29ae766ad668fb7cf`。 |
+| Compound Engineering philosophy | https://every.to/guides/compound-engineering | 官方理念与 Plan → Work → Review → Compound 循环。2026-07-15 复核。 |
+| grill-me plugin | https://github.com/alirezarezvani/claude-skills/tree/main/engineering/grill-me | 逐问题、深度优先、codebase-first 的计划质询插件；核验 plugin `v2.9.0`，仓库提交 `84dc5a4f6ab93df5195805010572d7d0f874dadb`（2026-07-14）。 |
+| grill-me original skill | https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me | `alirezarezvani/claude-skills` manifest 声明的 MIT 派生来源。2026-07-15 复核。 |
+| Claude Code Plugins | https://code.claude.com/docs/en/plugins | Plugin 适用范围、Skill/agent/hook/MCP/LSP/monitor 结构、测试和版本管理。2026-07-15 复核。 |
+| Anthropic official plugin directory | https://github.com/anthropics/claude-plugins-official | Claude Code 官方管理目录；快照提交 `7b8dfeb2d02727ff17b2437c7a00def0cf069972`（2026-07-14）。目录明确要求安装者自行信任审查插件。 |
+| Codex Plugins | https://learn.chatgpt.com/docs/plugins | Codex/ChatGPT plugin 的 Skills、Apps、MCP、Browser extensions、Hooks、scheduled templates、权限与卸载边界。2026-07-15 复核。 |
+| Codex Security plugin | https://learn.chatgpt.com/docs/security/plugin | 授权代码的本地安全扫描、finding evidence 和可导出的结构化结果。2026-07-15 复核。 |
+| Trail of Bits Skills | https://github.com/trailofbits/skills | 安全研究、diff review、static analysis、supply-chain、property-based testing 等按需插件；快照提交 `cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af`（2026-06-30），无 GitHub release。 |
+| OpenTelemetry traces | https://opentelemetry.io/docs/concepts/signals/traces/ | 跨服务 trace、span、context propagation、link 和 attribute。2026-07-15 复核。 |
+| OpenTelemetry context propagation | https://opentelemetry.io/docs/concepts/context-propagation/ | 跨服务信号关联及外部传播、Baggage 的安全注意事项。2026-07-15 复核。 |
+| Pact contract testing | https://docs.pact.io/ | Consumer/provider contract testing 工作模型。2026-07-15 复核。 |
 
 ## 近期 Harness 研究
 

@@ -26,6 +26,11 @@
 - 评测：任务定义、评分器、成本、延迟、通过率、失败归因。
 - 生产控制：guardrail、审批、密钥、部署形态、回滚。
 
+专题报告：
+
+- [Harness 工程化思维：机制、层次、约束与公共资产](./docs/harness-engineering-mindset.md)：从机制因果链出发，判断决策应进入哪个层次，并用分级约束和资产晋升机制把个人经验转化为团队能力。
+- [长期演进复杂多服务系统中的 Harness 工程实践](./docs/harness-engineering-practice-for-evolving-multiservice-systems.md)：成本、调试、安全、规模、指令、协作六维实践，以及 OpenSpec + Compound Engineering + grill-me 和 2026-07 插件组合建议。
+
 ## 仓库布局
 
 ```text

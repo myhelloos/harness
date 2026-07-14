@@ -1,10 +1,12 @@
 # Harness 原则
 
-检查日期：2026-07-05 Asia/Shanghai
+检查日期：2026-07-15 Asia/Shanghai
 
 ## 定义
 
 AI agent harness 是围绕模型驱动 agent 的运行时基底。它控制 agent 如何接收任务、观察状态、选择上下文、调用工具、更新记忆、处理错误、引入人工、验证工作并记录证据。
+
+如何从机制因果链理解这些能力、把决定放入正确层次，并将约束和个人经验演进为团队公共资产，见 [Harness 工程化思维：机制、层次、约束与公共资产](./harness-engineering-mindset.md)。
 
 ## 好的 Harness 必须明确什么
 
